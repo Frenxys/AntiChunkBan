@@ -1,0 +1,36 @@
+name: AntiBookBan
+version: '1.0.0'
+main: com.enea.antibookban.AntiBookBan
+api-version: '1.21'
+author: Enea
+description: Chunk ban protection - detects and removes oversized shulker boxes (even from offline player data) and limits books (25 pages, ASCII only).
+website: https://github.com/enea
+
+commands:
+  scan:
+    description: Scans a player's inventory (online or offline) for shulker boxes that exceed the limit.
+    usage: /scan <player>
+    permission: antibookban.scan
+  fixall:
+    description: Scans ALL player data (including offline players) and removes shulker boxes that exceed the limit. Creates a .bak backup before modifying each file.
+    usage: /fixall
+    permission: antibookban.fixall
+  abb:
+    description: Main AntiBookBan command (reload / version).
+    usage: /abb <reload>
+    aliases: [acb]
+    permission: antibookban.admin
+
+permissions:
+  antibookban.scan:
+    description: Allows using /scan
+    default: op
+  antibookban.fixall:
+    description: Allows using /fixall
+    default: op
+  antibookban.notify:
+    description: Receives automatic alerts when a player joins with a suspicious shulker
+    default: op
+  antibookban.admin:
+    description: Allows using /abb (reload the config)
+    default: op

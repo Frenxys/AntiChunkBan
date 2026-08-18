@@ -1,0 +1,23 @@
+# Gradle
+build/
+.gradle/
+*.class
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# Test servers (jar scaricati, mondi generati, log)
+test/paper-*/
+test/*.dat
+test/dl.txt
+
+# Varie
+*.log
+
+# Freebuff
+.freebuff/

@@ -1,0 +1,41 @@
+# ══════════════════════════════════════════════════════════════
+#  AntiBookBan - configuration
+#  by Enea
+# ══════════════════════════════════════════════════════════════
+
+# Maximum size (in bytes) of a shulker box before it is considered
+# dangerous. 2 MB = 2 * 1024 * 1024 = 2097152 bytes.
+# Above this size the shulker can cause a chunk ban.
+max-shulker-size: 2097152
+
+# Maximum number of pages allowed for a written book.
+max-book-pages: 25
+
+# If true, books can contain ONLY ASCII characters (0-127).
+# This blocks the "weird" characters used for chunk ban, but it also
+# blocks accented letters (é, à, etc.). Set false to allow them.
+ascii-only: true
+
+# If true, when a player joins with a suspicious shulker,
+# everyone with the antibookban.notify permission is notified.
+scan-on-join: true
+
+# If true, /fixall and /scan also check and remove heavy shulkers
+# from the ender chest (not just the inventory).
+fix-ender-chest: true
+
+messages:
+  prefix: "&8[&cAntiBookBan&8]&r "
+  no-permission: "&cYou don't have permission to use this command."
+  player-not-found: "&cPlayer &e%player% &cnot found (never seen on this server?)."
+  usage-scan: "&cUsage: &e/scan <player>"
+  scan-start: "&7Scanning &e%player%&7..."
+  scan-clean: "&a%player%: no suspicious shulker found."
+  scan-found: "&cDangerous shulker: &f%material% &8(slot &f%slot%&8 - %container%) &7- &c%size% &8(limit %limit%)"
+  scan-result: "&e%player%&7: &c%count% &7suspicious shulkers found."
+  fixall-start: "&7Scanning all player data (including offline players)..."
+  fixall-done: "&aDone: &e%files% &7files read, &e%players% &7players affected, &c%shulkers% &7shulkers removed. Backups saved as &f.dat.bak&7."
+  join-alert: "&c%player% &7joined with &c%count% &7suspicious shulkers!"
+  book-too-many-pages: "&cA book can have at most &e%max% &cpages."
+  book-non-ascii: "&cThe book can only contain ASCII characters (no special characters)."
+  reloaded: "&aConfig reloaded."
